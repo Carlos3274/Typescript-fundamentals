@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import './App.css'
 
 type TypograhyProps = {
@@ -15,7 +16,9 @@ type TitleProps = {
   size?: "small" | "large"
 }
 
+
 const Paragraph = ({ children, size, color }: TypograhyProps & ParagraphProps) => {
+
   return <h1
   style={{
     fontSize: size === 'small' ? "1.5rem" : "5rem",
@@ -27,6 +30,7 @@ const Paragraph = ({ children, size, color }: TypograhyProps & ParagraphProps) =
 const Title = ({ children, size}: TypograhyProps) => {
   return <h1
   style={{
+
     fontSize: size === 'small' ? "1.5rem" : "3rem"
   }}
   >{children}</h1>
@@ -93,6 +97,11 @@ function App() {
     <div className="App">
     
       <Title size='large'><span>Hello <b>World</b></span></Title>
+
+      <Paragraph color='aquamarine' size='small'>\
+        Eu sou um parágrafo
+      </Paragraph>
+
       <Paragraph size='small' color='gray
       '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, iusto!</Paragraph>
       <List 
@@ -104,6 +113,7 @@ function App() {
           return <h3>{item.name}</h3>
         }}
       />
+
     </div>
 
   )
