@@ -6,7 +6,22 @@ export function App2() {
   
   useEffect(() => {
     document.title = `User name ${name}`
-  })
+  }, [name])
+
+  useEffect(() => {
+    console.log('Esse componente será executado somente uma vez')
+  }, [])
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      console.log('tick')
+    }, 1000)
+
+    return () => {
+      clearInterval(intervalId)
+    }
+  }, [])
+
   return (
     
     <div>
