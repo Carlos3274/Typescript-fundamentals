@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import './App.css'
 
 type TypograhyProps = {
@@ -16,10 +16,11 @@ type TitleProps = {
   size?: "small" | "large"
 }
 
-const Paragraph = ({ children, size}: TypograhyProps & ParagraphProps) => {
+const Paragraph = ({ children, size, color}: TypograhyProps & ParagraphProps) => {
   return <h1
   style={{
-    fontSize: size === 'small' ? "1.5rem" : "5rem"
+    fontSize: size === 'small' ? "1.5rem" : "5rem",
+    color: color
   }}
   >{children}</h1>
 }
@@ -27,7 +28,8 @@ const Paragraph = ({ children, size}: TypograhyProps & ParagraphProps) => {
 const Title = ({ children, size}: TypograhyProps) => {
   return <h1
   style={{
-    fontSize: size === 'small' ? "1.5rem" : "5rem"
+    fontSize: size === 'small' ? "1.5rem" : "5rem",
+    
   }}
   >{children}</h1>
 }
@@ -44,7 +46,10 @@ function App() {
   return (
     <div className="App">
     
-      <Title ><span>Hello <b>World</b></span></Title>
+      <Title size='large'><span>Hello <b>World</b></span></Title>
+      <Paragraph color='aquamarine' size='small'>\
+        Eu sou um parágrafo
+      </Paragraph>
     </div>
   )
 }
